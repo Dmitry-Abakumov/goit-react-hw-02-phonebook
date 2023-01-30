@@ -68,10 +68,7 @@ class PhoneBook extends Component {
     return (
       <Box pt={50} pl={15} pr={15} textAlign="center" as="section">
         <h2>Phonebook</h2>
-        <PhoneBookForm
-          onSubmit={this.addContact}
-          isDublicate={this.isDublicate}
-        />
+        <PhoneBookForm onSubmit={this.addContact} />
         {contacts.length ? (
           <Box border="1px solid black" pt={50} pb={50}>
             <PhoneBookFilter onChange={this.onFilterChange} filter={filter} />
