@@ -1,12 +1,8 @@
 import { Component } from 'react';
-import toastr from 'toastr';
 import PropTypes from 'prop-types';
 
 import Box from 'shared/components/Box/Box';
 import Input from 'shared/components/Input/Input.styled';
-
-import 'shared/utils/toastr-config';
-import 'toastr/build/toastr.min.css';
 
 class PhoneBookForm extends Component {
   state = {
@@ -23,15 +19,7 @@ class PhoneBookForm extends Component {
   onSubmitForm = e => {
     e.preventDefault();
 
-    const { onSubmit, isDublicate } = this.props;
-    const { name } = this.state;
-
-    if (isDublicate(name)) {
-      toastr.warning(`${name} is already in contacts`);
-      this.reset();
-
-      return;
-    }
+    const { onSubmit } = this.props;
 
     onSubmit(this.state);
     this.reset();
@@ -50,7 +38,10 @@ class PhoneBookForm extends Component {
         mb={10}
         display="flex"
         justifyContent="center"
+        border="1px solid black"
         gridGap={10}
+        pt={50}
+        pb={50}
         as="form"
         onSubmit={this.onSubmitForm}
       >
@@ -89,5 +80,4 @@ export default PhoneBookForm;
 
 PhoneBookForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
-  isDublicate: PropTypes.func.isRequired,
 };

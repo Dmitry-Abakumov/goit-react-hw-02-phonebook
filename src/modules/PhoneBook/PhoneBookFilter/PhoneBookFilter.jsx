@@ -1,13 +1,14 @@
 import PropTypes from 'prop-types';
 
+import Box from 'shared/components/Box/Box';
 import Input from 'shared/components/Input/Input.styled';
 
 const PhoneBookFilter = ({ onChange, filter }) => {
   return (
-    <label>
+    <Box mb={10} as="label">
       Find contacs by name
       <Input onChange={onChange} name="filter" value={filter} />
-    </label>
+    </Box>
   );
 };
 

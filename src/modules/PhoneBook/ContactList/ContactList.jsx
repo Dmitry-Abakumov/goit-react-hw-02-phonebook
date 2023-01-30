@@ -5,7 +5,7 @@ import Box from 'shared/components/Box/Box';
 
 const ContactList = ({ filteredContacts, onDelBtnClick }) => {
   return (
-    <Box mt={10} as="ul">
+    <Box display="flex" flexDirection="column" gridGap={10} mt={10} as="ul">
       {filteredContacts.map(({ name, id, number }) => (
         <ContactListItem
           key={id}
@@ -30,6 +30,7 @@ ContactList.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
     })
   ),
   onDelBtnClick: PropTypes.func.isRequired,
