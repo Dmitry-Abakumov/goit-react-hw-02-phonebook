@@ -39,7 +39,7 @@ class PhoneBookForm extends Component {
         display="flex"
         justifyContent="center"
         border="1px solid black"
-        gridGap={10}
+        gridGap={50}
         pt={50}
         pb={50}
         as="form"
